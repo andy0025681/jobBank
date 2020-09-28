@@ -21,7 +21,7 @@ import re
 '''
 # 只包含新北市與台北市的所有職缺
 # total 代表該職務類型的職缺總數(可以在這頁爬到職缺總數，但實際職缺的資料，如果大於150頁，只會顯示前150頁)
-# actual 是用產業去劃分該職務類型的職缺總數，讓它小於150頁，以便完整抓到所有職缺(還是會漏幾筆，沒去細查原因)
+# actual 是用產業去劃分該職務類型的職缺總數，讓它小於150頁，以便完整抓到所有職缺
 jobList = {
     "資訊軟體系統類": {
         "軟體設計工程師": {
@@ -450,7 +450,7 @@ def main():
     out_queue_list = {} # 檔案存放佇列列表
     
     max_t_num = 10 # 子線程數量
-    semaphore = threading.Semaphore(max_t_num) # 建立旗標，限制子線程最大數量，也是8
+    semaphore = threading.Semaphore(max_t_num) # 建立旗標，限制子線程最大數量
     threads = [] # 子線程列表
     if True: # 開關
         '''
